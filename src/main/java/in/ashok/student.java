@@ -18,7 +18,7 @@ public class student {
     private String LastName;
 
     @NotEmpty(message = "mobile number required")
-    @Size(min=10 ,message="mobile should have atleast 10 digit")
+    @Size(min=10 ,max=10,message="mobile should have atleast 10 digit")
     private String Mobilenumber;
 
     @NotEmpty(message = "enter email id")
