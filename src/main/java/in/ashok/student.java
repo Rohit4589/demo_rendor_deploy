@@ -1,6 +1,7 @@
 package in.ashok;
 
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,6 +26,12 @@ public class student {
     @Email(message = "enter valid email id")
     private String Email;
 
+    @NotEmpty(message="enter password")
+    @Size(min = 6, max = 20, message = "password must be between 6 and 20 characters")
+    @Pattern(
+        regexp = "^(?=.*[A-Z][a-z])(?=.*\\d).+$",
+        message = "password must contain at least one lowercase and uppercase letter and one digit"
+    )
     private String Password;
 
     private String Address;
